@@ -8,10 +8,19 @@ int main() {
 		<< mode.width << "x" << mode.height
 		<< " (" << mode.bitsPerPixel << " bpp)"
 		<< "window." << std::endl;
-	sf::Window window(mode, "Hello Window!", sf::Style::Titlebar);
+
+	// creates an unresizable window
+	sf::Window window(mode, "Hello Window!", sf::Style::Titlebar | sf::Style::Close);
+
 	// another approach:
 	// sf::Window window;
 	// window.create(sf::VideoMode(640, 480), "Title", sf::Style::Default);
+	
+	// change the position of the window (relatively to the desktop)
+	// window.setPosition(sf::Vector2i(10, 10));
+
+	// change the title of the window
+	window.setTitle("New Title!");
 
 	// run the following as long as the window is open
 	while (window.isOpen()) {
